@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: rgb(219, 88, 12);
+}
+
+div.content {
+    margin: 0;
+    display: flex;
+    padding: 0;
+}
+
+/*HEADER*/
+div.header {
+    height: 250px;
+    color: rgb(225, 245, 42);
+    background-image: url('Image/background1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+div.header h1 {
+    font-size: 42px;
+    height: 100px;
+    font-style: italic;
+    padding: 2%;
+    margin: 0;
+}
+
+div.btn_submit {
+    display: flex;
+}
+
+div.btn_submit button {
+    margin: 2px;
+}
+
+/*LEFT CONTENT*/
+div.left_content {
+    margin: 0;
+    width: 500px;
+}
+
+/*RIGHT CONTENT*/
+div.right_content {
+    width: 500px;
+    margin: 0;
+}
+
+/*MAIN CONTENT*/
+div.main_content {
+    margin: 0;
+    height: auto;
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+div.main_content table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-color: rgb(9, 83, 59);
+}
+
+/*IMG*/
+img#main_img {
+    padding: 3px;
+    width: 180px;
+    height: 180px;
+}
+
+img#r_img {
+    padding: 0;
+    width: 120px;
+    height: 120px;
+}
+
+/*footer*/
+hr {
+    color: rgb(9, 83, 59);
+    margin: 0;
+    padding: 0;
+}
+
+div.footer {
+    margin: 0;
+    background-color: rgb(9, 83, 59);
+    background-size: cover;
+    padding: 0;
+    color: rgb(199, 218, 37);
+}
+
+div.footer p.information {
+    text-align: center;
+}
+
+/*Data*/
+div.conn_data {
+    margin-top: 3%;
+    padding: 0;
+}
+
+div.data {
+    float: left;
+    margin: 7px;
+    width: 220px;
+    height: 275px;
+}
+
+div.data ul {
+    padding: 0;
+    margin: 0;
+}
+
+div.data li {
+    list-style-type: none;
+    text-align: center;
+}
+
+div.data li a::after {
+    content: '';
+}
+
+div.data li img {
+    border: solid 1px;
+    width: 220px;
+    height: 160px
+}

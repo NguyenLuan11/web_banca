@@ -1,0 +1,108 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+
+
+#container_menu {
+    margin: 0 auto;
+}
+
+nav {
+    margin: 10px 0;
+    background-color: rgb(9, 83, 59);
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+}
+
+nav ul li {
+    display: inline-block;
+    background-color: rgb(9, 83, 59);
+}
+
+nav a {
+    display: block;
+    padding: 0 10px;
+    color: rgb(225, 245, 42);
+    font-size: 20px;
+    line-height: 60px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: yellowgreen;
+    background-color: #046e28;
+}
+
+/* Hide Dropdowns by Default */
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    /* the height of the main nav */
+}
+
+/* Display Dropdowns on Hover */
+nav ul li:hover>ul {
+    display: inherit;
+}
+
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+    width: 140px;
+    float: none;
+    display: list-item;
+    position: relative;
+}
+
+/* Second, Third and more Tiers */
+nav ul ul ul li {
+    position: relative;
+    top: -60px;
+    left: 140px;
+}
+
+
+/* Change this in order to change the Dropdown symbol */
+li>a:after {
+    content: ' +';
+}
+
+li>a:only-child:after {
+    content: '';
+}
+
+button {
+    background-color: rgb(117, 216, 183);
+    border: solid 1px #02323a;
+    border-radius: 5px;
+    height: 25px;
+    font-weight: bold;
+}
+
+button.btn_search {
+    border-radius: 37%;
+    padding: 4px;
+}
+
+button:hover {
+    background-color: rgb(34, 160, 118);
+}
+
+input {
+    border: solid 1px #02323a;
+    border-radius: 5px;
+    height: 25px;
+}
+
+div.btn {
+    display: flex;
+    justify-content: end;
+}
+
+div.btn_submit {
+    margin-left: 3%;
+}

@@ -1,0 +1,18 @@
+.social-fixed {
+    position: fixed;
+    right: 1%;
+    top: 40%;
+    z-index: 99999;
+}
+
+.social-fixed ul li {
+    margin-bottom: 10px;
+}
+
+a {
+    background-color: transparent;
+}
+
+ul {
+    list-style: none;
+}
