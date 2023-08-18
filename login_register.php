@@ -48,9 +48,9 @@ session_start();
 
 	<!-- Logout -->
 	<?php
-		if(isset($_POST["logout"])) {
+		if($_GET["act"] == "logout") {
 			$_SESSION["loged"] = null;
-			header("location:home.php");
+			header("location:home_user.php");
 		}
 	?>
     
