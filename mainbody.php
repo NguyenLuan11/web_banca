@@ -20,7 +20,6 @@
         <div class="conn_data" style="width: 945px; margin-top: 0;">
             <h2 style='font-weight: bold; color: SeaGreen;'>DANH MỤC CÁC LOẠI CÁ CẢNH</h2>
             <?php
-            session_start();
             include("connectdb.php");     
  
                 // Thực hiện câu lệnh SELECT
