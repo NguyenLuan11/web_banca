@@ -1,13 +1,13 @@
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cá Cảnh Shop</title>
-    <!--CSS-->
-    <?php
-    session_start();
-    include("taglib.php");
-    ?>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cá Cảnh Shop</title>
+	<!--CSS-->
+	<?php
+	session_start();
+	include("taglib.php");
+	?>
 	<style>
 		body {
 			margin: 0;
@@ -47,62 +47,62 @@
 		}
 	</style>
 </head>
+
 <body>
 
-<?php 
-include('connectdb.php');
-session_start();
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-}
-$action = (isset($_GET['action']))?$_GET['action']:'add';
-$sl = (isset($_GET['sl']))?$_GET['sl']:1;
-//session_destroy();
-// die();
-// var_dump($action);
-// die();
-$query = mysqli_query($link,"SELECT * FROM loai_ca WHERE id = $id ");
-if($query){
-    $product = mysqli_fetch_assoc($query);
-}
-$item = [
-    'id' =>$product['id'],
-    'Image' =>$product['Image'],
-    'fish_name' =>$product['fish_name'],
-    'Color' =>$product['Color'],
-    'Price' =>$product['Price'],
-    'sl'=>1
-];
+	<?php
+	include('connectdb.php');
+	session_start();
+	if (isset($_GET['id'])) {
+		$id = $_GET['id'];
+	}
+	$action = (isset($_GET['action'])) ? $_GET['action'] : 'add';
+	$sl = (isset($_GET['sl'])) ? $_GET['sl'] : 1;
+	//session_destroy();
+	// die();
+	// var_dump($action);
+	// die();
+	$query = mysqli_query($link, "SELECT * FROM loai_ca WHERE id = $id ");
+	if ($query) {
+		$product = mysqli_fetch_assoc($query);
+	}
+	$item = [
+		'id' => $product['id'],
+		'Image' => $product['Image'],
+		'fish_name' => $product['fish_name'],
+		'Color' => $product['Color'],
+		'Price' => $product['Price'],
+		'sl' => 1
+	];
 
 
-if($action=='add'){
-    if(isset($_SESSION['giohang'][$id])){
-        $_SESSION['giohang'][$id]['sl'] +=1;
-    
-    } else{
-        $_SESSION['giohang'][$id] = $item;
-    }
-}
-if($action=='update'){
-    $_SESSION['giohang'][$id]['sl'];
-}
-if($action=='delete'){
-    unset($_SESSION['giohang'][$id]);
-}
-//header('location:view_cart.php');
-// echo"<pre>";
-// print_r($_SESSION['giohang']);
-?>
+	if ($action == 'add') {
+		if (isset($_SESSION['giohang'][$id])) {
+			$_SESSION['giohang'][$id]['sl'] += 1;
+		} else {
+			$_SESSION['giohang'][$id] = $item;
+		}
+	}
+	if ($action == 'update') {
+		$_SESSION['giohang'][$id]['sl'];
+	}
+	if ($action == 'delete') {
+		unset($_SESSION['giohang'][$id]);
+	}
+	//header('location:view_cart.php');
+	// echo"<pre>";
+	// print_r($_SESSION['giohang']);
+	?>
 
 
-<?php 
+	<?php
 
-$cart = (isset($_SESSION['giohang']))?$_SESSION['giohang']:[];		
+	$cart = (isset($_SESSION['giohang'])) ? $_SESSION['giohang'] : [];
 
-?>
+	?>
 
-<div class="content" style="margin-bottom: 3%;">
-        <div class="left_content">
+	<div class="content" style="margin-bottom: 3%;">
+		<div class="left_content">
 			<table border="1">
 				<tr style="color: rgb(225, 245, 42); background-color: #02323a;">
 					<th>Chức năng</th>
@@ -120,10 +120,10 @@ $cart = (isset($_SESSION['giohang']))?$_SESSION['giohang']:[];
 			</table>
 		</div>
 
-        <div class="main_content">
+		<div class="main_content">
 			<h2>Giỏ hàng</h2>
-			<table class='table' border="1">	
-			<tr style="color: rgb(225, 245, 42); background-color: #02323a;">
+			<table class='table' border="1">
+				<tr style="color: rgb(225, 245, 42); background-color: #02323a;">
 					<th>STT</th>
 					<th>Hình ảnh</th>
 					<th>Tên cá</th>
@@ -132,42 +132,43 @@ $cart = (isset($_SESSION['giohang']))?$_SESSION['giohang']:[];
 					<th>Giá</th>
 					<th>Thành tiền</th>
 					<th>Remove</th>
-				</tr>			
-					<?php $total_price=0; ?>
-					<?php foreach($cart as $keys => $row):
-						$total_price += ($row['Price']*$row['sl']);
-					?>
+				</tr>
+				<?php $total_price = 0; ?>
+				<?php foreach ($cart as $keys => $row) :
+					$total_price += ($row['Price'] * $row['sl']);
+				?>
 					<tr>
-						<td><?php echo $keys ++ ?></td>
+						<td><?php echo $keys++ ?></td>
 						<td style="padding: 0;"><img src="Image/<?php echo $row['Image']; ?>" width=140px height="140px"></td>
 						<td><?php echo $row['fish_name'] ?></td>
 						<td><?php echo $row['Color'] ?></td>
 						<td>
 							<form action="view_cart.php">
 								<input type="hidden" name="action" value="update">
-								<input type="hidden" name="id" value="<?php echo $row['id']?>">
+								<input type="hidden" name="id" value="<?php echo $row['id'] ?>">
 								<input type="text" name="sl" value="<?php echo $row['sl'] ?>">
-								<button type="submit">Cập nhật</button>				      
+								<button type="submit">Cập nhật</button>
 							</form>
 						</td>
 						<td><?php echo $row['Price'] ?></td>
-						<td><?php echo number_format($row['Price']*$row['sl'])?></td>
+						<td><?php echo number_format($row['Price'] * $row['sl']) ?></td>
 						<td>
-							<a href="view_cart.php?id=<?php echo $row['id']?>&action=delete" class="btn btn-danger">Xóa</a>
+							<a href="view_cart.php?id=<?php echo $row['id'] ?>&action=delete" class="btn btn-danger">Xóa</a>
 						</td>
-				    </tr>	
-					<?php endforeach?>
-					<tr>
-						<td>Tổng</td>
-						<td colspan="7" class="text-center bg-info"><?php echo number_format($total_price)?>VNĐ</td>
-					</tr>		 
+					</tr>
+				<?php endforeach ?>
+				<tr>
+					<td>Tổng</td>
+					<td colspan="7" class="text-center bg-info"><?php echo number_format($total_price) ?>VNĐ</td>
+				</tr>
 			</table>
 		</div>
 
-        <div class="right_content"></div>
-    </div>
+		<div class="right_content"></div>
+	</div>
 
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>

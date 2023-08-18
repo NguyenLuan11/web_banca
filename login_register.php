@@ -86,7 +86,11 @@ session_start();
 			<a href="home.php" class="btn btn-success">Trang chủ</a>
 			<a href="login_register.php?page=register" class="btn btn-info">Đăng ký</a>
 			<a href="login_register.php" class="btn btn-primary">Đăng nhập</a>
-			<?php if(isset($_SESSION["loged"])) echo "<a href='login_register.php?act=logout' class='btn btn-danger'>Đăng xuất</a>"; ?>
+			<?php 
+			if(isset($_SESSION["loged"])) {
+				echo "<a href='login_register.php?act=logout' class='btn btn-danger'>Đăng xuất</a>";
+			}
+			?>
 		</div>
 
 		<div class="row">
@@ -111,8 +115,6 @@ session_start();
 			</div>
 			<?php } ?>
 			<!-- 'end nếu thành công thì hiện thông báo:' -->
-
-
 			
 			<?php
 			//nếu tồn tại biến $_GET["page"] = "register" thì gọi trang đăng ký:
