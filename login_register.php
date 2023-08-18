@@ -46,8 +46,13 @@ session_start();
 	?>
 	<!-- 'end thực hiện kiểm tra dữ liệu người dùng đăng ký' -->
 
-
-
+	<!-- Logout -->
+	<?php
+		if(isset($_POST["logout"])) {
+			$_SESSION["loged"] = null;
+			header("location:home.php");
+		}
+	?>
     
     <!-- 'start thực hiện kiểm tra dữ liệu người dùng nhập ở form đăng nhập' -->
     <?php
@@ -120,7 +125,6 @@ session_start();
 			//nếu tồn tại biến $_GET["page"] = "register" thì gọi trang đăng ký:
 			if(isset($_GET["page"])&&$_GET["page"]=="register")
 				include "register.php";
-
 
 			//nếu không tồn tại biến $_GET["page"] = "register"
 			if(!isset($_GET["page"])){
