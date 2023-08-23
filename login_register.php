@@ -50,7 +50,7 @@ session_start();
 	<?php
 		if(isset($_GET["act"]) && $_GET["act"] == "logout") {
 			$_SESSION["loged"] = null;
-			header("location:home_user.php");
+			header("location:home.php");
 		}
 	?>
     

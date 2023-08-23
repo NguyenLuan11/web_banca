@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +10,6 @@
     <title>Cá Cảnh Shop</title>
     <!--CSS-->
     <?php
-    session_start();
     include("taglib.php");
     ?>
     <!--CÂU CHÀO JS-->
