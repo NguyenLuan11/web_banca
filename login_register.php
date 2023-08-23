@@ -33,6 +33,7 @@ session_start();
 			if($pass1!=$pass2){
 				header("location:login_register.php?page=register");
 				setcookie("error", "Đăng ký không thành công!", time()+1, "/","", 0);
+				exit();
 			}
 			else{
 				$pass = $pass1;
@@ -40,6 +41,7 @@ session_start();
 					values ('$user_name','$pass','$name')");
 				header("location:login_register.php?page=register");
 				setcookie("success", "Đăng ký thành công!", time()+1, "/","", 0);
+				exit();
 			}
 		}
 
@@ -51,6 +53,7 @@ session_start();
 		if(isset($_GET["act"]) && $_GET["act"] == "logout") {
 			$_SESSION["loged"] = null;
 			header("location:home.php");
+			exit();
 		}
 	?>
     
@@ -69,15 +72,18 @@ session_start();
 				$_SESSION["loged"] = $tk;
 				header("location:home_user.php");
 				setcookie("success", "Đăng nhập thành công!", time()+1, "/","", 0);
+				exit();
 			}
 			elseif($count2==1) {
 				$_SESSION["loged"] = $tk;
 				header("location:admin.php");
 				setcookie("success", "Đăng nhập thành công!", time()+1, "/","", 0);
+				exit();
 			}
 			else{
 				header("location:login_register.php");
 				setcookie("error", "Đăng nhập không thành công!", time()+1, "/","", 0);
+				exit();
 			}
 			
 		}
