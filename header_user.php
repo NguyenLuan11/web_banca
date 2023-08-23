@@ -7,8 +7,6 @@
                     <?php
                     if (isset($_SESSION['loged'])) {
                         echo 'Xin chào:' . '<span style="color:pink">' . $_SESSION['loged'] . '</span>';
-                    } else {
-                        echo 'Luan';
                     }
                     ?>
                 </button>
