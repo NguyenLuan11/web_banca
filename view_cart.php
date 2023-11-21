@@ -82,7 +82,10 @@
 		}
 	}
 	if ($action == 'update') {
-		$_SESSION['giohang'][$id]['sl'];
+		if (isset($_SESSION['giohang'][$id])) {
+			$_SESSION['giohang'][$id]['sl'];
+		}
+		
 	}
 	if ($action == 'delete') {
 		unset($_SESSION['giohang'][$id]);

@@ -6,7 +6,6 @@
                 <h2 style='font-weight: bold; color: SeaGreen;'>DANH MỤC CÁ THỦY SINH</h2>
                 <?php
                 $MaCa = 'ThuySinh';
-                session_start();
                 include("Abstract_DanhMuc.php");
                 ?>
             </div>

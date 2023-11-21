@@ -5,7 +5,6 @@
         <div class="main_content">
             <div class="conn_data">
                 <?php
-                session_start();
                 include("search.php");
                 ?>
             </div>

@@ -10,7 +10,6 @@
     <title>Cá Cảnh Shop</title>
     <!--CSS-->
     <?php
-    session_start();
     include("taglib.php");
     ?>
     <!--CÂU CHÀO JS

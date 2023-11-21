@@ -6,7 +6,6 @@
                 <h2 style='font-weight: bold; color: SeaGreen;'>DANH MỤC CÁ LÓC CẢNH</h2>
                 <?php
                 $MaCa = 'LocCanh';
-                session_start();
                 include("Abstract_DanhMuc.php");
                 ?>
             </div>

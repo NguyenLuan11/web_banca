@@ -7,7 +7,6 @@
                 <h2 style='font-weight: bold; color: SeaGreen;'>DANH MỤC CÁ KOI</h2>
                 <?php
                 $MaCa = 'Koi';
-                session_start();
                 include("Abstract_DanhMuc.php");
                 ?>
             </div>

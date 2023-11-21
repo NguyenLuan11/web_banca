@@ -6,7 +6,6 @@
                 <h2 style='font-weight: bold; color: SeaGreen;'>DANH MỤC GUPPY</h2>
                 <?php
                 $MaCa = 'Guppy';
-                session_start();
                 include("Abstract_DanhMuc.php");
                 ?>
             </div>
