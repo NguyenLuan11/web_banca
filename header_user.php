@@ -6,7 +6,7 @@
                     <ion-icon style="width: 30px; height: 30px; margin: 0;" name="person-circle-sharp"></ion-icon>
                     <?php
                     if (isset($_SESSION['loged'])) {
-                        echo 'Xin chào:' . '<span style="color:pink">' . $_SESSION['loged'] . '</span>';
+                        echo '<span style="color:pink">' . $_SESSION['loged'] . '</span>';
                     }
                     ?>
                 </button>
